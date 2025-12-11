@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Ainalain Skin</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <audio id="background-music" src="Untitled (2).mp3" autoplay loop></audio>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    var audio = document.getElementById('background-music');
+
+    var playMusic = function() {
+        audio.play().catch(function(){});
+        document.removeEventListener('click', playMusic);
+    };
+
+    document.addEventListener('click', playMusic);
+});
+</script>
+  <!-- Sakura petals animation -->
+  <canvas id="sakura-canvas"></canvas>
+
+  <header class="header animated-fade-in">
+    <div class="container">
+      <h1 class="title shine-text">Ainalain Skin</h1>
+      <p class="subtitle shine-text">Идеальный уход для каждой кожи ✨</p>
+    </div>
+  </header>
+
+  <!-- Welcome section -->
+  <section class="welcome animated-fade-in-up">
+    <div class="container">
+      <p class="welcome-msg shine-text">Добро пожаловать в мир эффективного и креативного ухода! Доверьтесь инновациям и сияйте с каждым днем!</p>
+    </div>
+  </section>
+
+  <!-- Skin type test section -->
+  <section class="skin-test-section animated-fade-in">
+    <div class="container">
+      <h2 class="section-title shine-text">Тест: узнай свой тип кожи</h2>
+      <form id="skin-test-form">
+        <div class="test-question big-question">
+          <label>1. Как ваша кожа ощущается после умывания?</label>
+          <select name="after-wash" required>
+            <option value="">Выберите...</option>
+            <option value="dry">Стянуто, сухо</option>
+            <option value="normal">Комфортно</option>
+            <option value="oily">Блестит, жирная плёнка</option>
+            <option value="combination">В отдельных местах сухо, в других – жирно</option>
+            <option value="acne-prone">Появляются покраснения или прыщи</option>
+          </select>
+        </div>
+        <div class="test-question big-question">
+          <label>2. Как быстро кожа начинает блестеть в течение дня?</label>
+          <select name="shine" required>
+            <option value="">Выберите...</option>
+            <option value="dry">Почти не блестит</option>
+            <option value="normal">Редко, ближе к вечеру</option>
+            <option value="oily">Через 1-2 часа</option>
+            <option value="combination">На лбу/носу быстро, на щеках – нет</option>
+            <option value="acne-prone">Появляются воспаления вместе с блеском</option>
+          </select>
+        </div>
+        <div class="test-question big-question">
+          <label>3. Есть ли частые несовершенства (прыщи, черные точки)?</label>
+          <select name="imperfections" required>
+            <option value="">Выберите...</option>
+            <option value="dry">Редко</option>
+            <option value="normal">Почти нет</option>
+            <option value="oily">Часто на Т-зоне</option>
+            <option value="combination">В разные периоды по-разному</option>
+            <option value="acne-prone">Постоянно</option>
+          </select>
+        </div>
+        <button class="fancy-btn" type="submit">Узнать свой тип</button>
+      </form>
+      <div id="skin-test-result" class="skin-test-result"></div>
+      <div id="rec-products" class="rec-products"></div>
+    </div>
+  </section>
+
+  <!-- Products Gallery -->
+  <section class="products-gallery-section animated-fade-in-up" id="gallery">
+    <div class="container">
+      <h2 class="section-title shine-text">Галерея косметики</h2>
+      <div id="products-gallery" class="products-gallery"></div>
+      <!-- Product modal -->
+      <div id="product-modal" class="product-modal">
+        <div class="product-modal-content">
+          <span class="modal-close">&times;</span>
+          <div id="modal-img"></div>
+          <div id="modal-info"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Steps Section -->
+  <section class="steps-section animated-fade-in">
+    <div class="container">
+      <h2 class="section-title shine-text">Этапы ухода</h2>
+      <div class="steps-list">
+        <div class="step-card animated-bounce">
+          <img src="https://www.lunifera.ru/blog/wp-content/uploads/2016/04/6113270284_3cde3da427_b.jpg" alt="Пенка">
+          <h3>Пенка</h3>
+          <p>Мягко очищает, удаляет загрязнения. Начало сияния!</p>
+        </div>
+        <div class="step-arrow">⟶</div>
+        <div class="step-card animated-bounce">
+          <img src="https://aravia-prof.ru/upload/resize_cache/webp/iblock/e22/rj0og7d7wk9g4pe3d5ys2h5603y68pgd.webp" alt="Тонер">
+          <h3>Тонер</h3>
+          <p>Восстанавливает pH, подготавливает к дальнейшему уходу.</p>
+        </div>
+        <div class="step-arrow">⟶</div>
+        <div class="step-card animated-bounce">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfXMaVy1Ep3-CI4q8anyQ3V3gnSF8EijmP8g&s" alt="Крем-сыворотка">
+          <h3>Крем-сыворотка</h3>
+          <p>Питает, поддерживает глубокое увлажнение.</p>
+        </div>
+        <div class="step-arrow">⟶</div>
+        <div class="step-card animated-bounce">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnDi7DnWl_IxmtnBxy6Jqi4Ukg5ELDUT0U4w&s" alt="SPF">
+          <h3>SPF</h3>
+          <p>Защита от солнца и преждевременного старения кожи.</p>
+        </div>
+      </div>
+      <div class="creative-bg"></div>
+    </div>
+  </section>
+
+  <!-- Ainalain Skin products (custom) -->
+  <section class="ainalain-products-section animated-fade-in-up" id="ainalain-products">
+    <div class="container">
+      <h2 class="section-title shine-text">Ainalain Skin: Собственная коллекция</h2>
+      <div class="ainalain-gallery">
+        <div class="ainalain-product-card">
+          <img src="Фото пенка.jpg" alt="Ainalain Penka">
+          <h3>Пенка Ainalain</h3>
+          <p>Розовая, нежно-очищающая и деликатная.</p>
+        </div>
+        <div class="ainalain-product-card">
+          <img src="тонер.jpg" alt="Ainalain Toner">
+          <h3>Тонер Ainalain</h3>
+          <p>Восстановление и сияние вашей кожи каждого утра.</p>
+        </div>
+        <div class="ainalain-product-card">
+          <img src="Фото тонер.jpg" alt="Ainalain Cream">
+          <h3>Крем Ainalain</h3>
+          <p>Максимальное увлажнение на весь день и ночь.</p>
+        </div>
+        <div class="ainalain-product-card">
+          <img src="Тонер 3.jpg" alt="Ainalain Serum">
+          <h3>Сыворотка Ainalain</h3>
+          <p>Концентрированная сила для сияния и гладкости.</p>
+        </div>
+        <div class="ainalain-product-card">
+          <img src="spf крем.jpg" alt="Ainalain SPF">
+          <h3>SPF Ainalain</h3>
+          <p>Защищает даже самую чувствительную кожу &mdash; каждый день.</p>
+        </div>
+      </div>
+      <div class="creative-bg"></div>
+    </div>
+  </section>
+
+  <!-- Chat Bot -->
+  <div id="chatbot" class="chatbot">
+    <div class="chatbot-header">💬 Чат-бот Ainalain Skin</div>
+    <div class="chatbot-messages" id="chat-messages"></div>
+    <form id="chat-form" autocomplete="off">
+      <input type="text" id="chat-input" placeholder="Спросите нас о продуктах..." maxlength="120" required>
+      <button class="fancy-btn" type="submit">Отправить</button>
+    </form>
+    <button class="chatbot-toggle-btn"><span>⇕</span></button>
+  </div>
+
+  <script src="./main.js"></script>
+</body>
+</html>
